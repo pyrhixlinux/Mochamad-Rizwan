@@ -1,6 +1,5 @@
 /* =============================
-   STYLE.CSS - FULL NAVY + TEXTURE VERSION
-   Tinggal replace semua CSS lama
+   STYLE.CSS - NAVY + RESPONSIVE
    ============================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
@@ -12,16 +11,30 @@
     font-family: 'Poppins', sans-serif;
 }
 
-:root{
+:root {
     --navy: #0a2540;
     --navy-dark: #081d33;
 }
 
-/* BACKGROUND TEXTURE */
+/* BASE */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     background: url('bggue.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #fff;
+}
+
+/* GLOBAL SECTION STYLE */
+section {
+    padding: 60px 16px;
+}
+
+h2 {
+    font-size: 24px;
 }
 
 /* NAVBAR */
@@ -35,7 +48,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 50px;
+    padding: 12px 16px;
     background: rgba(10, 37, 64, 0.95);
     backdrop-filter: blur(6px);
 }
@@ -43,17 +56,20 @@ header {
 .logo {
     color: #fff;
     font-weight: 600;
+    font-size: 16px;
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
-    gap: 25px;
+    flex-wrap: wrap;
+    gap: 10px 18px;
 }
 
 .navbar ul li a {
     text-decoration: none;
     color: #fff;
+    font-size: 14px;
     transition: 0.3s;
 }
 
@@ -64,14 +80,17 @@ header {
 /* HERO */
 .hero {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 80px 50px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    gap: 24px;
+    text-align: center;
 }
 
 .hero-text h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
+    font-size: 28px;
+    margin-bottom: 8px;
 }
 
 .hero-text h1 span {
@@ -79,20 +98,22 @@ header {
 }
 
 .hero-text strong {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .hero-text p {
-    margin: 10px 0 25px;
+    margin: 8px 0 20px;
+    font-size: 14px;
 }
 
 .btn {
     display: inline-block;
-    padding: 12px 25px;
+    padding: 10px 20px;
     background: var(--navy);
     color: #fff;
     text-decoration: none;
     border-radius: 6px;
+    font-size: 14px;
     transition: 0.3s;
 }
 
@@ -101,47 +122,48 @@ header {
 }
 
 .hero-img img {
-    width: 260px;
+    width: 180px;
+    max-width: 60vw;
     border-radius: 50%;
     border: 4px solid var(--navy);
 }
 
 /* ABOUT */
 .about {
-    padding: 70px 50px;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.55);
+    text-align: center;
 }
 
 .about h2 {
-    text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     color: #c8d8ff;
 }
 
 .about p {
     max-width: 800px;
-    margin: auto;
-    text-align: center;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.6;
 }
 
 /* SKILLS */
 .skills {
-    padding: 70px 50px;
     background: rgba(0,0,0,0.45);
 }
 
 .skills h2 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
     color: #c8d8ff;
 }
 
 .skill-item {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .skill-item p {
-    margin-bottom: 5px;
+    margin-bottom: 4px;
+    font-size: 14px;
 }
 
 .progress {
@@ -151,58 +173,63 @@ header {
 }
 
 .progress div {
-    height: 12px;
+    height: 10px;
     background: var(--navy);
 }
 
 /* EXPERIENCE */
 .experience {
-    padding: 70px 50px;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.55);
 }
 
 .experience h2 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
     color: #c8d8ff;
 }
 
 .exp-card {
-    background: rgba(255,255,255,0.1);
-    padding: 20px;
-    border-left: 5px solid var(--navy);
-    margin-bottom: 20px;
+    background: rgba(255,255,255,0.08);
+    padding: 16px;
+    border-left: 4px solid var(--navy);
+    margin-bottom: 16px;
     border-radius: 8px;
+    font-size: 14px;
 }
 
-/* PROJECTS */
+.exp-card span {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+/* PROJECTS & SOCIAL */
 .projects {
-    padding: 70px 50px;
     background: rgba(0,0,0,0.45);
 }
 
 .projects h2 {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 28px;
     color: #c8d8ff;
 }
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+    grid-template-columns: 1fr;
+    gap: 18px;
 }
 
 .project-card {
     background: rgba(255,255,255,0.08);
-    padding: 15px;
+    padding: 14px;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     transition: 0.3s;
+    font-size: 14px;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
 }
 
 .project-card img {
@@ -211,79 +238,37 @@ header {
 }
 
 .project-card h3 {
-    margin: 10px 0;
+    margin: 10px 0 6px;
+    font-size: 16px;
+}
+
+.project-card p {
+    font-size: 13px;
 }
 
 .project-card a {
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 8px;
     text-decoration: none;
     background: var(--navy);
     color: #fff;
-    padding: 8px 15px;
+    padding: 7px 14px;
     border-radius: 5px;
+    font-size: 13px;
 }
 
 .project-card a:hover {
     background: var(--navy-dark);
 }
 
-/* SOCIAL */
-.social-card img {
-    width: 60px;
-    margin-bottom: 10px;
-}
-
-/* CONTACT */
-.contact {
-    padding: 90px 50px;
-    text-align: center;
-    background: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(10,37,64,0.9));
-}
-
-.contact h2 {
-    margin-bottom: 10px;
-    color: #c8d8ff;
-    letter-spacing: 1px;
-}
-
-.contact p {
-    margin-bottom: 30px;
-    color: #e2e8f0;
-}
-
-/* WHATSAPP PROFESSIONAL BOX */
-.wa-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 15px;
-    background: linear-gradient(135deg, #0a2540, #0f3b6f);
-    color: #fff;
-    padding: 18px 30px;
-    border-radius: 16px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 18px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-    transition: 0.3s ease;
-}
-
-.wa-button img {
-    width: 32px;
-}
-
-.wa-button:hover {
-    transform: translateY(-5px) scale(1.02);
-    background: linear-gradient(135deg, #0f3b6f, #0a2540);
-}
-/* SOCIAL MEDIA GRADIENT BACKGROUND */
-
+/* SOCIAL ICONS */
 .social-card .social-icon {
-    padding: 20px;
+    padding: 16px;
     border-radius: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 /* YouTube */
@@ -307,8 +292,129 @@ header {
     );
 }
 
-/* Biar ikon keliatan cakep */
+/* Icon image */
 .social-icon img {
     width: 40px;
     height: 40px;
+}
+
+/* CONTACT */
+.contact {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(10,37,64,0.9));
+}
+
+.contact h2 {
+    margin-bottom: 8px;
+    color: #c8d8ff;
+    letter-spacing: 1px;
+}
+
+.contact p {
+    margin-bottom: 24px;
+    color: #e2e8f0;
+    font-size: 14px;
+}
+
+/* WHATSAPP BOX */
+.wa-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #0a2540, #0f3b6f);
+    color: #fff;
+    padding: 14px 22px;
+    border-radius: 16px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transition: 0.3s ease;
+    max-width: 90%;
+}
+
+.wa-button img {
+    width: 28px;
+    height: 28px;
+}
+
+.wa-button span {
+    font-size: 14px;
+}
+
+.wa-button:hover {
+    transform: translateY(-4px) scale(1.01);
+    background: linear-gradient(135deg, #0f3b6f, #0a2540);
+}
+
+/* =============================
+   RESPONSIVE BREAKPOINTS
+   ============================= */
+
+/* Tablet ke atas */
+@media (min-width: 768px) {
+    .navbar {
+        padding: 15px 40px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    section {
+        padding: 70px 40px;
+    }
+
+    .hero {
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-between;
+    }
+
+    .hero-text {
+        max-width: 50%;
+    }
+
+    .hero-img {
+        max-width: 40%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-img img {
+        width: 230px;
+        max-width: 100%;
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contact {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+/* Desktop besar */
+@media (min-width: 1024px) {
+    .navbar {
+        padding: 15px 60px;
+    }
+
+    section {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .hero-img img {
+        width: 260px;
+    }
 }
